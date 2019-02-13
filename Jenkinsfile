@@ -19,11 +19,13 @@ pipeline {
             steps {
                 sh '/opt/apache-maven-3.3.9/bin/mvn clean compile package install -P backend,frontend' 
             }
+            /*
+            Uncomment to perform JUnit tests:
             post {
                 success {
-                    //Uncomment to perform JUnit tests: junit 'target/surefire-reports/**/*.xml' 
+                    junit 'target/surefire-reports/**/*.xml' 
                 }
-            }
+            }*/
         }
     }
 }
