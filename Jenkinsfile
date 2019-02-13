@@ -17,11 +17,11 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh '/opt/apache-maven-3.3.9/bin/mvn clean compile package install -P backend,frontend -DskipTests' 
+                sh '/opt/apache-maven-3.3.9/bin/mvn clean compile package install -P backend,frontend' 
             }
             post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml' 
+                    //Uncomment to perform JUnit tests: junit 'target/surefire-reports/**/*.xml' 
                 }
             }
         }
