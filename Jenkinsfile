@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                sh '/opt/apache-maven-3.3.9/bin/mvn clean compile package install -P backend,frontend' 
+                sh '/opt/apache-maven-3.3.9/bin/mvn clean compile package install -P backend,frontend -DskipTests' 
             }
             post {
                 success {
